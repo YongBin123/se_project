@@ -130,6 +130,26 @@ function modifyMemo(memoId) {
     });
 }
 
+// 메모 삭제 함수
+function deleteMemo(memoId) {
+  fetch(`http://localhost:5500/deleteMemo/${memoId}`, {
+    method: 'DELETE',
+  })
+    .then((response) => response.text())
+    .then(() => {
+      // 화면에서 삭제된 메모 엘리먼트를 제거
+      var memoDiv = document.getElementById(memoId);
+      if (memoDiv) {
+        memoDiv.remove();
+      }
+      handleResponse('delete', true, null);
+    })
+    .catch((error) => {
+      console.error('서버와의 통신 중 오류가 발생했습니다:', error);
+      handleResponse('delete', false, error);
+    });
+}
+
 // 서버 응답 처리 함수
 function handleResponse(action, success, error) {
   if (success) {
@@ -137,6 +157,9 @@ function handleResponse(action, success, error) {
     switch (action) {
       case 'modify':
         alert('메모 수정 완료');
+        break;
+      case 'delete':
+        alert('메모 삭제 완료');
         break;
       default:
         break;

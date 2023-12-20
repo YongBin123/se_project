@@ -191,6 +191,29 @@ app.post('/saveMemo', (req, res) => {
   }
 });
 
+// 메모 삭제 엔드포인트 추가
+app.delete('/deleteMemo/:id', (req, res) => {
+  try {
+    const memoId = req.params.id;
+
+    // 데이터베이스에서 메모 삭제
+    const query = 'DELETE FROM memos WHERE id = ?';
+    db.query(query, [memoId], (err, result) => {
+      if (err) {
+        console.error('데이터베이스 오류:', err);
+        // 더 자세한 오류 메시지를 클라이언트로 전달
+        res.status(500).json({ error: '메모 삭제 실패', message: '데이터베이스 오류 발생', errorDetails: err.message });
+      } else {
+        // 메모 삭제 성공
+        res.json({ success: true });
+      }
+    });
+  } catch (error) {
+    console.error('서버 오류:', error);
+    res.status(500).json({ error: '서버 오류', message: '서버 오류 발생', errorDetails: error.message });
+  }
+});
+
 // 메모 수정 엔드포인트
 app.put('/modifyMemo/:id', (req, res) => {
   try {
