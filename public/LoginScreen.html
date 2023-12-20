@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" href="LoginScreen.css">
+</head>
+<body>
+    <nav>
+        <h1>로그인 페이지</h1>
+        <button id="before" onclick="goBack()">메인화면으로</button>
+    </nav>
+<div class="container">
+    <h1>로그인</h1>
+    <form id="loginForm">
+        <input type="text" id="userId" name="userId" autocomplete="off" placeholder="아이디"><br>
+        <input type="password" id="password" name="password" autocomplete="off" placeholder="비밀번호" required><br>
+        <button id="loginButton" name="loginButton" onclick="login()">로그인</button>
+        <div id="loginMessage"></div>
+    </form>    
+</div>
+<script src="LoginScreen.js"></script>
+</body>
+</html>
