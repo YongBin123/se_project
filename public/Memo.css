@@ -1,0 +1,177 @@
+/* 페이지 전체의 기본 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* 내비게이션 바 스타일 */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 20px;
+    background-color: #505050;
+    color: #ffffff;
+}
+
+/* 내비게이션 바 안의 h1 스타일 */
+nav h1 {
+    font-size: 30px;
+}
+
+/* "이전" 버튼 스타일 */
+#before {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    left: 1%;
+}
+
+/* "이전" 버튼 호버 효과 */
+#before:hover {
+    transform: scale(1.1);
+}
+
+/* "메모 작성" 버튼 스타일 */
+#memoWriteButton {
+    color: #ffffff; 
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    left: 90%;
+}
+
+/* 주요 내용을 담은 컨테이너 스타일 */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 컨테이너 내의 제목 스타일 */
+.container h1 {
+    margin-left: 340px;
+    margin-bottom: 40px;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* 일반 버튼 스타일 */
+button {
+    background-color: #f4746b;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* 일반 버튼 호버 효과 */
+button:hover {
+    background-color: #d63c33;
+    transform: scale(1.1);
+}
+
+/* 삭제 버튼 스타일 */
+#delete {
+    background-color: #ff9800;
+    margin-top: 10px;
+}
+
+/* 삭제 버튼 호버 효과 */
+#delete:hover {
+    background-color: #f78820;
+    transform: scale(1.1);
+}
+
+/* 저장된 메모 목록 스타일 */
+.saved-memos {
+    display: grid;
+    gap: 20px;
+}
+
+/* 메모 아이템 스타일 */
+.memo-item {
+    width: 760px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 메모 내용 스타일 */
+p {
+    flex: 1;
+    margin: 0;
+    color: #333333;
+}
+
+/* 삭제 버튼 스타일 */
+.memo-item .delete-btn {
+    color: #f4746b;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* 삭제 버튼 호버 효과 */
+.memo-item .delete-btn:hover {
+    color: #d63c33;
+    transform: scale(1.1);
+}
+
+/* 수정 버튼 스타일 */
+.memo-item .edit-btn {
+    color: #33bb09;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* 수정 버튼 호버 효과 */
+.memo-item .edit-btn:hover {
+    color: #5db60f;
+    transform: scale(1.1);
+}
+
+/* 저장 버튼 스타일 */
+.memo-item .save-btn {
+    color: #4376f6;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* 저장 버튼 호버 효과 */
+.memo-item .save-btn:hover {
+    color: #1177f4;
+    transform: scale(1.1);
+}
+
+/* 메모 아이디 입력 필드 스타일 */
+#memoId {
+    width: 500px;
+}
