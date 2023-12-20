@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>메모 작성 페이지</title>
+  <link rel="stylesheet" href="MemoWriteScreen.css">
+</head>
+<body>
+    <nav>
+        <h1>메모 작성</h1>
+        <button id="before" onclick="goBack()">이전화면으로</button>
+    </nav>
+    <div class="container">
+        <h1>메모 작성</h1>
+        <div class="memo">
+            <textarea id="memoText" name="memoText" placeholder="메모를 입력하세요"></textarea>
+            <button id="save" name="saveMemoButton" onclick="saveMemo()">메모 저장</button>
+        </div>
+    </div>
+  <script src="MemoWriteScreen.js"></script>
+</body>
+</html>

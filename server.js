@@ -167,6 +167,30 @@ app.get('/getMemos', (req, res) => {
   }
 });
 
+// 메모 저장 엔드포인트
+app.post('/saveMemo', (req, res) => {
+  try {
+    const { memoText } = req.body;
+
+    // 데이터베이스에 메모 정보 삽입
+    const query = `INSERT INTO memos (memoText) VALUES (?)`;
+    db.query(query, [memoText], (err, result) => {
+      if (err) {
+        console.error('데이터베이스 오류:', err);
+        // 더 자세한 오류 메시지를 클라이언트로 전달
+        res.status(500).json({ error: '메모 저장 실패', message: '데이터베이스 오류 발생', errorDetails: err.message });
+      } else {
+        console.log('메모 저장 성공');
+        res.json({ success: '메모 저장 성공' });
+      }
+    });
+  } catch (error) {
+    console.error('서버 오류:', error);
+    // 더 자세한 오류 메시지를 클라이언트로 전달
+    res.status(500).json({ error: '서버 오류', message: '서버 오류 발생', errorDetails: error.message });
+  }
+});
+
 // 서버를 지정된 포트에서 실행
 app.listen(port, () => {
   console.log(`서버가 ${port} 포트에서 실행 중입니다.`);
