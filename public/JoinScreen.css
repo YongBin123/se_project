@@ -1,0 +1,89 @@
+/* 페이지 전체의 기본 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* 내비게이션 바 스타일 */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 20px;
+    background-color: #505050;
+    color: #ffffff;
+}
+
+/* 내비게이션 바 안의 h1 스타일 */
+nav h1 {
+    font-size: 30px;
+}
+
+/* "이전" 버튼 스타일 */
+#before {
+    color: #ffffff;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    left: 1%;
+}
+
+/* "이전" 버튼 호버 효과 */
+#before:hover {
+    transform: scale(1.1);
+}
+
+/* 주요 내용을 담은 컨테이너 스타일 */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #e0981a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 컨테이너 내의 제목 스타일 */
+.container h1 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* 폼 스타일 */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 입력 필드 스타일 */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e0981a;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* 제출 버튼 스타일 */
+button {
+    padding: 12px;
+    background-color: #e0981a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 제출 버튼 호버 효과 */
+button:hover {
+    background-color: #e08309;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="JoinScreen.css">
+</head>
+<body>
+    <nav>
+        <h1>회원가입 페이지</h1>
+        <button id="before" onclick="goBack()">메인화면으로</button>
+    </nav>
+<div class="container">
+    <h1>회원가입</h1>
+    <form id="registrationForm">
+        <input type="text" id="userId" name="userId" autocomplete="off" placeholder="아이디를 입력해주세요." required><br>
+        <input type="password" id="password" name="password" autocomplete="off" placeholder="비밀번호를 입력해주세요."><br>
+        <input type="text" id="phone" name="phone" autocomplete="off" placeholder="휴대폰번호를 입력해주세요. (-를 포함하여 작성)"required><br>
+        <input type="email" id="email" name="email" autocomplete="off" placeholder="이메일을 입력해주세요. (@를 포함하여 작성)" required><br>
+        <input type="text" id="username" name="username" autocomplete="off" placeholder="이름을 입력해주세요." required><br>
+        <button id="joinButton" name="joinButton" onclick="join()">회원가입하기</button>
+        <div id="joinMessage"></div>
+      </form>    
+</div>
+<script src="JoinScreen.js"></script>
+</body>
+</html>
