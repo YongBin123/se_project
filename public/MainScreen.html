@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행지 추천 사이트</title>
+    <link rel="stylesheet" href="MainScreen.css">
+    <script src="MainScreen.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1><a href="#">LETSGOTRIP</a></h1>
+        <div id="loginContainer">
+            <p id="loginText"></p>
+        </div>
+        <div class="search">
+            <input type="text" id="searchTerm" placeholder="주소를 알고 싶은 여행지를 쓰세요." autocomplete="off">
+            <button id ="searchButton" onclick="search()">검색</button>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+        <div class="buttonContainer">
+            <button id="loginPageButton" name="loginButton" onclick="clickLoginButton()">로그인</button>
+            <button id="joinPageButton" name="joinButton" onclick="clickJoinButton()">회원가입</button>
+        </div>
+    </header>
+    <article class="article">
+        <div class="menu">
+            <div class="nav">
+                <ul id="nav_list">
+                    <div class="hamburger" onclick="toggleNav()">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <li class="nav-item"><a href="#" onclick="displayFirstInfo()">지역별 추천 1위 여행지</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayAmusementParkInfo()">놀이동산/테마파크</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayHistoryInfo()">역사관광지/문화유산</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayAnimalPlantInfo()">동물원/식물원/수목원</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayMuseumInfo()">박물관/과학관</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayAquariumInfo()">아쿠아리움</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayParkInfo()">공원/테마공원</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayWaterParkInfo()">워터파크</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayBeachInfo()">해수욕장/해변</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayExperienceInfo()">체험/관람</a></li>
+                    <li class="nav-item"><a href="#" onclick="displayMountainInfo()">휴양림/산/섬</a></li>
+                <ul>    
+            </div>
+        </div>     
+        <div class="photo-container">
+            <div class="photo">
+                <a href="https://www.everland.com/web/everland/main.html">
+                    <img src="images/everland.jpg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>에버랜드<br><br>경기 용인시 처인구 포곡읍 에버랜드로 199</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.lotteworld.com/gate.html">
+                    <img src="images/lotte.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>롯데월드<br><br>서울 송파구 올림픽로 240</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.camelliahill.co.kr/">
+                    <img src="images/hill.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>카멜리아힐<br><br>제주 서귀포시 안덕면 병악로 166</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.aquaplanet.co.kr/jeju/index.do">
+                    <img src="images/aquajeju.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>아쿠아플라넷 제주<br><br>제주 서귀포시 성산읍 섭지코지로 95 아쿠아플라넷 제주</p>
+            </div>
+            <div class="photo">
+                <a href="http://nhasfarmland.com/asfarm.php?device=">
+                    <img src="images/farm.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>안성팜랜드<br><br>경기 안성시 공도읍 대신두길 28</p>
+            </div>
+            <div class="photo">
+                <a href="https://eworld.kr/">
+                    <img src="images/e.webp" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>이월드<br><br>대구 달서구 두류공원로 200 이월드</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.osulloc.com/">
+                    <img src="images/otea.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>오설록 티 뮤지엄<br><br>제주 서귀포시 안덕면 신화역사로 15 오설록</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.coexaqua.com/">
+                    <img src="images/coex.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>코엑스아쿠아리움<br><br>서울 강남구 영동대로 513</p>
+            </div>
+            <div class="photo">
+                <a href="http://yeosucablecar.com/">
+                    <img src="images/yeosucable.webp" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>여수해상케이블카<br><br>전남 여수시 돌산읍 돌산로 3600-1</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.everland.com/web/caribbean/main.html">
+                    <img src="images/caribeean.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>캐리비안베이<br><br>경기 용인시 처인구 포곡읍 에버랜드로 199</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.visitsealife.com/busan/">
+                    <img src="images/sealife.jpg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>씨라이프부산아쿠아리움<br><br>부산 해운대구 해운대해변로 266</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.namisum.com/">
+                    <img src="images/nami.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>남이섬<br><br>강원 춘천시 남산면 남이섬길 1</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.ecolandjeju.co.kr/">
+                    <img src="images/ecoland.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>에코랜드 테마파크<br><br>제주 제주시 조천읍 번영로 1278-169</p>
+            </div>
+            <div class="photo">
+                <a href="https://hanok.jeonju.go.kr/">
+                    <img src="images/hanok.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>전주한옥마을<br><br>전북 전주시 완산구 기린대로 99</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.koreanfolk.co.kr/">
+                    <img src="images/minsok.jpg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>한국민속촌<br><br>경기 용인시 기흥구 민속촌로 90 한국민속촌</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.royalpalace.go.kr/">
+                    <img src="images/gung.jpg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>경복궁<br><br>서울 종로구 사직로 161 경복궁</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.aquaplanet.co.kr/yeosu/index.do">
+                    <img src="images/aqua.webp" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>아쿠아플라넷 여수<br><br>전남 여수시 오동도로 61-11 아쿠아리움</p>
+            </div>
+            <div class="photo">
+                <a href="http://www.yangtte.co.kr/">
+                    <img src="images/yangtte.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>대관령양떼목장<br><br>강원 평창군 대관령면 대관령마루길 483-32 대관령양떼목장</p>
+            </div>
+            <div class="photo">
+                <a href="https://artemuseum.com/">
+                    <img src="images/artte.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>아르떼뮤지엄 제주<br><br>제주 제주시 애월읍 어림비로 478</p>
+            </div>
+            <div class="photo">
+                <a href="https://ddp.or.kr/?menuno=228">
+                    <img src="images/ddp.avif" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>동대문디자인플라자<br><br>서울 중구 을지로 281</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.suyeong.go.kr/tour/index.suyeong?menuCd=DOM_000001102001001000&link=success&cpath=%252Ftour">
+                    <img src="images/gwanganri.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>광안리해수욕장<br><br>부산 수영구 광안해변로 219</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.instagram.com/jadegardenkorea/">
+                    <img src="images/jade.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>제이드가든<br><br>강원 춘천시 남산면 햇골길 80</p>
+            </div>
+            <div class="photo">
+                <a href="https://seoulland.co.kr/">
+                    <img src="images/seouland.webp" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>서울랜드<br><br>경기 과천시 광명로 181</p>
+            </div>
+            <div class="photo">
+                <a href="https://www.museum.go.kr/site/main/home">
+                    <img src="images/medium.jpeg" class="photo">
+                </a>
+                <p>인기 여행지 TOP 24 선정!<br><br>국립중앙박물관<br><br>서울 용산구 서빙고로 137 국립중앙박물관</p>
+            </div>
+        </div>
+        <div class="main-container">
+            <ul class ="nav_list1" id="navList1">
+                <li class="nav-item"><a href="#" onclick="memoPage()">여행 메모</a></li>
+                <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
+                <li class="nav-item"><a href="#" onclick="community()">여행 커뮤니티</a></li>
+            </ul>
+        </div>
+        <footer class="footer">
+            <div class="consult">
+                <p class="consulting">고객센터 지원<br>: 0000-0000</p>
+                <p class="time">시간: 평일 오전 9시 ~ 오후 6시<br>- 점심시간: 12:00 ~ 13:00 -<br>(주말 및 공휴일 휴무)</p>
+            </div>
+            <div class="notice">
+                <p class="message">당신의 여행을 더욱 특별하게 만드세요! 나와 LETSGOTRIP?</p>
+            </div>
+        </footer>
+    </article>
+</div>
+</body>
+</html>
