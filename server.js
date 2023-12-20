@@ -79,6 +79,29 @@ app.post('/logout', (req, res) => {
   res.json({ message: '로그아웃되었습니다.' });
 });
 
+// 회원탈퇴 엔드포인트
+app.delete('/deleteUser', (req, res) => {
+  try {
+    // 현재 로그인한 사용자의 아이디(userId)는 클라이언트에서 요청 헤더에 담겨져 있다고 가정
+    const userId = req.headers['user-id'];
+
+    // 데이터베이스에서 사용자 삭제
+    const query = 'DELETE FROM users WHERE userId = ?';
+    db.query(query, [userId], (err, result) => {
+      if (err) {
+        console.error('데이터베이스 오류:', err);
+        res.status(500).json({ error: '회원탈퇴 실패', message: '데이터베이스 오류 발생', errorDetails: err.message });
+      } else {
+        // 회원탈퇴 성공
+        res.json({ success: true });
+      }
+    });
+  } catch (error) {
+    console.error('서버 오류:', error);
+    res.status(500).json({ error: '서버 오류', message: '서버 오류 발생', errorDetails: error.message });
+  }
+});
+
 // 이전화면으로 버튼 클릭 시 로그인 상태 확인
 app.get('/check-login', (req, res) => {
   // 로그인 상태를 확인하는 로직을 작성하고,
